@@ -12,3 +12,5 @@ ispe req aai match kr gyi index page bhej diya ye index vala
 jo ye render vale page bnaye jate h kha bnaye jate h views me
 
 welome to e-comm site launch hui to isme anchor tag dale hue h
+git remote use origin git@github.com:RiddhiTaneja/ecomm.git
+git push -u origin main

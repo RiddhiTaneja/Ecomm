@@ -28,7 +28,7 @@ catch(err){
 
 module.exports.getProductsAll = async (req, res , next) =>{
     const  products = await Products.find();
-   // console.log(products);
+    console.log(products);
     let data ={};
     products.forEach(product =>{
         let arr = data[product.category] || [];

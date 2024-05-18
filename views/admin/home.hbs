@@ -6,12 +6,10 @@
     <title>Admin Home Page</title>
 
     <style>
-        .button-group{
+        button-group{
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            margin: 10px;
-            
+            justify-content: space-between;
 
         }
 
@@ -22,23 +20,20 @@
 
         }
     </style>
-    <link rel="stylesheet" href="/styles/navbar.css">
 </head>
 <body>
 
  
     <h1>Welcome to the home page</h1>
+
        {{>navbar}}
+       
        <div class="button-group">
-        <a href="/admin/products/all">
+
+
         <button>View Products</button>
-        </a> <br>
-         <a href="/admin/products/add">
-        <button>Add New Products</button>
-        </a>
+        
        </div>
-
-
           
 </body>
 </html>

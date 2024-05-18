@@ -1,0 +1,14 @@
+/admin se req aayegi to kha jayegi admin ke router pe then router decide krega ki kha jayegi reqq kya krna h
+controller s the thing jo db se connect hoti h isliye uspe req nhi jati
+jb b anchor tag usekrte h to vo backend pe rew bhej deta hoti
+jb / pe req aati h to admin pe jati h admin adminRouter pe  bejta  h adminrouter / se admincontroller.getAdminHome pe bhejta h 
+
+sbse phle starting se flow likh ri hu taki trko dyan rhe
+/ pe req gyi req jane k baaad
+//app.get('/' ,(req,res,next)=>{
+  //  res.render('index');
+//})  
+ispe req aai match kr gyi index page bhej diya ye index vala
+jo ye render vale page bnaye jate h kha bnaye jate h views me
+
+welome to e-comm site launch hui to isme anchor tag dale hue h

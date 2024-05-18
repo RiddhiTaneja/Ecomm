@@ -1,0 +1,14 @@
+.button-group{
+    display: flex;
+    justify-content:center;
+}
+.my-product-image{
+    width: 200px;
+  
+}
+
+.my-product-image img{
+    width: 100%;
+}
+
+

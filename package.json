@@ -3,17 +3,19 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js -e js,mjs,cjs,json,hbs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "hbs": "^4.2.0",
     "mongoose": "^8.3.3",
     "mongose": "^0.0.2-security",
-    "node": "^22.0.0",
+    "node": "^22.1.0",
     "nodemon": "^3.1.0"
   },
-  "description": ""
+  "description": "��#\u0000 \u0000E\u0000c\u0000o\u0000m\u0000m\u0000\r\u0000 \u0000#\u0000 \u0000E\u0000c\u0000o\u0000m\u0000m\u0000\r\u0000 \u0000#\u0000 \u0000E\u0000c\u0000o\u0000m\u0000m\u0000\r\u0000 \u0000"
 }

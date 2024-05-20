@@ -1,7 +1,9 @@
  const Products = require('../models/products');
 
  module.exports.getAdminHome =(req,res, next)=>{
-    res.render('admin/home');
+    res.render('admin/home',{
+       isAdmin : true
+    });
    
  }
 
@@ -17,7 +19,10 @@ await Products.create({
     seller
 });   
 
-res.redirect('/admin/products/all');
+res.redirect('/admin/products/all',{
+
+    isAdmin : true
+});
 }
 
 catch(err){
@@ -37,13 +42,17 @@ module.exports.getProductsAll = async (req, res , next) =>{
     });
     //res.send(data);
     res.render('admin/products-list',{
-        products:data
+        products:data ,
+        isAdmin: true
 
     });
     }
 
     module.exports.getProductsAdd = (req, res , next) =>{
-    res.render('admin/add-product');
+    res.render('admin/add-product',{
+
+        isAdmin : true
+    });
        
         }
 
@@ -53,7 +62,8 @@ module.exports.getProductsAll = async (req, res , next) =>{
     try{
         const product = await Products.findById(id);
         res.render('admin/update-products',{
-            product
+            product,
+            isAdmin: true
         });
 
     }
@@ -74,7 +84,10 @@ module.exports.getProductsAll = async (req, res , next) =>{
                 p.seller = seller;
                 await p.save();
 
-                res.redirect('/admin/products/all');
+                res.redirect('/admin/products/all',{
+
+                    isAdmin : true
+                });
             }
             catch(err){
 
@@ -87,7 +100,10 @@ module.exports.getProductsAll = async (req, res , next) =>{
         let p = await Products.deleteOne({_id:id});
         await p.save();
 
-        res.redirect('/admin/products/all');
+        res.redirect('/admin/products/all',{
+
+            isAdmin : true
+        });
     }
     catch(err){
 

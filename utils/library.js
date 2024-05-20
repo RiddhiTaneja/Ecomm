@@ -1,4 +1,4 @@
-function getProductsCategoryWise(products){
+module.exports.getProductsCategoryWise = function (products){
     let data ={};
 
     products.forEach(product =>{
@@ -7,5 +7,7 @@ function getProductsCategoryWise(products){
     data[product.category] = arr;
 
 });
+
 return data;
+
 }

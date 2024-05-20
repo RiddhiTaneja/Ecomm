@@ -31,4 +31,4 @@ prod =
 
 
 let data = JSON.stringify(prod);
-console.log(data);
+//console.log(data);

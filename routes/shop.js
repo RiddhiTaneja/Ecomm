@@ -3,9 +3,12 @@ const express = require('express');
 //const { postProductAdd } = require('../controller/products');
 const router = express.Router();
 
-const shopController = ('../controller/shop')
+const shopController = require('../controller/shop');
+router.get('/',shopController.getHome);
+
+
 router.get('/products/all' , shopController.getProductsAll);
-//router.get('/products/:id' ,);
+router.get('/products/:id' ,shopController.getProductsById);
 //router.get('/cart' ,);
 //router.get('/cart/add' ,);
 

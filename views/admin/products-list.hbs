@@ -13,7 +13,7 @@
             align-items:end;
             border: 1px solid black;
             padding: 10px;
-           // width: 80%;
+            width: 80%;
             margin: auto;
         }
         .product-item{
@@ -23,12 +23,54 @@
             box-shadow: 5px 10px 10px #ccc;
             
         }
+         .button-group{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            //row-gap: 2px;
+        }
+
         .category {
             width: 100%;
         }
+        
+.my-product-image{
+    max-width: 200px;
+}
+
+.my-product-image img{
+    width: 100%;
+}
+        *{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a:link{
+    text-decoration: none;
+    color: black;
+}
+
+nav a:visited{
+    color: black;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: blue;
+}
     
     </style>
-  {{>generalcss}}
 </head>
 <body>
     {{>navbar}}

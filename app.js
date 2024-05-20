@@ -17,12 +17,11 @@ app.get('/' ,(req,res,next)=>{
 
 })
 //routes
-const adminRouter = require('./routes/admin')
-app.use('/admin' , adminRouter)
-    
+const adminRouter = require('./routes/admin');
+app.use('/admin' , adminRouter);
 
 const shopRouter = require('./routes/shop');
-   app.use('/shop' , shopRouter);
+app.use('/shop' , shopRouter);
 
 mongoose.connect('mongodb://127.0.0.1:27017/ecommerce').then(()=>{
     app.listen(PORT,()=>{
@@ -34,5 +33,3 @@ mongoose.connect('mongodb://127.0.0.1:27017/ecommerce').then(()=>{
 .catch(err=>{
     console.log(err)
 })
-
-// ad

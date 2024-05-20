@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+nav a{
+    text-decoration: none;
+}
+nav a:link{
+    text-decoration: none;
+    color: black;
+}
+
+nav a:visited{
+    color: black;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+    </style>
+</head>
+
+<body>
+        {{>navbar}}
+    <h1>Welcome to CB Shop</h1>
+
+       <div class="product-item">
+     <div class="my-product-image">
+    <img src="{{product.imageUrl}}">
+    </div> <br>
+    <h4>Product Name:{{product.name}}</h4>
+    <h4>Products Price:{{product.price}}</h4>
+    <h4>Products Seller:{{product.seller}}</h4>
+    <h4>Products Description:{{product.description}}</h4>
+       <h4>Reviews:</h4>
+  
+
+    <ul>
+     
+        {{#each product.review as |r|}}
+        <li>{{r}}</li>
+        {{/each}}
+  
+    </ul>
+
+  </div>
+
+  <a href="/shop/cart/add/{{product._id}}">
+    <button>Add To Cart</button>
+  </a>
+
+  <a href="#">
+    <button>Buy Now</button>
+  </a>
+
+</body>
+</html>

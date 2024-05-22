@@ -9,8 +9,11 @@ router.get('/',shopController.getHome);
 
 router.get('/products/all' , shopController.getProductsAll);
 router.get('/products/:id' ,shopController.getProductsById);
-//router.get('/cart' ,);
-//router.get('/cart/add' ,);
 
+
+router.get('/cart' ,shopController.getCart);
+router.get('/cart/add/:id' ,shopController.getAddToCartById);
+router.get('/cart/increase/:id' , shopController.getIncrease);
+router.get('/cart/decrease/:id' , shopController.getDecrease);
 
 module.exports  = router;

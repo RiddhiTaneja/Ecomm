@@ -4,13 +4,22 @@ const app = express();
 const PORT= 4444;
 const mongoose = require('mongoose');
 const hbs = require('hbs');
+const User = require("./models/user");
 //setting of partial hbs
-app.set('view engine' ,'hbs');
+app.use(async(req,res,next)=>{
+let user= await User.findOne({
+    _id: "664afc3858664fbcd046b799"
+});
+req.user = user;
+next();
+})
 hbs.registerPartials(__dirname + '/views/partials');
+app.set('view engine' ,'hbs');
+
 
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, 'public')));
-
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'LinkCss')));
 
 app.get('/' ,(req,res,next)=>{
     res.render('index');

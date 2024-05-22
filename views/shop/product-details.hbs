@@ -48,22 +48,16 @@ nav a:hover{
     <h4>Products Seller:{{product.seller}}</h4>
     <h4>Products Description:{{product.description}}</h4>
        <h4>Reviews:</h4>
-  
-
     <ul>
-     
         {{#each product.review as |r|}}
         <li>{{r}}</li>
         {{/each}}
-  
     </ul>
-
   </div>
 
   <a href="/shop/cart/add/{{product._id}}">
     <button>Add To Cart</button>
   </a>
-
   <a href="#">
     <button>Buy Now</button>
   </a>

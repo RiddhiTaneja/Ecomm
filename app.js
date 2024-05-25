@@ -8,7 +8,7 @@ const User = require("./models/user");
 //setting of partial hbs
 app.use(async(req,res,next)=>{
 let user= await User.findOne({
-    _id: "664afc3858664fbcd046b799"
+    _id: "6651b0b8056847376046b7a3"
 });
 req.user = user;
 next();
@@ -21,11 +21,12 @@ app.use(express.urlencoded({extended:true}));
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,'LinkCss')));
 
-app.get('/' ,(req,res,next)=>{
-    res.render('index');
-
-})
+app.get('/');
 //routes
+const homeRouter = require('./routes/home');
+app.get('/', homeRouter);
+
+
 const adminRouter = require('./routes/admin');
 app.use('/admin' , adminRouter);
 

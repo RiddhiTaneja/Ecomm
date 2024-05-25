@@ -24,6 +24,16 @@
             text-decoration: none;
             color: black;
         }
+        .BuyNowBtn{
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
 
 </style>
 {{>generalcss}}
@@ -57,6 +67,12 @@
         </li>
         {{/each}}
     </ul>
+ <a href="/shop/cart/buy">
+    <button class="BuyNowBtn">
+       Buy Now  
+        </button>
+</a>
+
     <script src="/Script/axois.min.js"></script>
     <script src="/Script/cartscript.js"></script>
 </body>

@@ -128,7 +128,7 @@ module.exports.getDecrease = async (req, res, next) => {
         cart[indx].quantity--;
     else if (cart[indx].quantity == 1)
         cart.splice(indx, 1);
-    req.user.save();
+    await req.user.save();
     try {
         let user = await Users.findOne({ _id: req.user._id }).populate('cart.id');
         let totalPrice = 0;
@@ -143,3 +143,33 @@ module.exports.getDecrease = async (req, res, next) => {
         next(err);
     }
 }
+
+module.exports.getCartBuy = async (req,res,next)=>{
+    try{
+        let user = await Users.findOne({_id: req.user._id}).populate('cart.id');
+        let cart = user.cart;
+
+        console.log(cart);
+        let newOrder = [];
+        cart.forEach(item=>{
+            let order = {};
+            order.product = item.id;
+            order.quantity = item.quantity;
+            order.price = item.id.price*item.quantity;
+            newOrder.push(order);
+        })
+        await Users.findByIdAndUpdate(req.user._id,{
+            orders: newOrder,
+            cart: []
+        })
+        res.send({
+            message:"Order placed successfully"
+        });
+    }
+    catch(err){
+        next(err);
+        
+    }
+}
+
+//populate join lgane k liye hota h
